@@ -1,0 +1,45 @@
+@import '../../../scss/variables/color.scss';
+
+.button {
+	display: flex;
+	justify-content: center;
+	min-width: 80px;
+	padding: 5px 8px;
+
+	font-size: 22px;
+	text-transform: capitalize;
+	color: $color-white;
+	border: none;
+	transition: all .2s ease;
+
+	cursor: pointer;
+
+	&:focus {
+		outline: 0;
+	}
+
+	&--attention {
+		background-color: $color-white;
+		color: $color-black;
+		&:disabled {
+			color: $color-gray-light;
+			background-color: $color-gray-dark;
+			cursor: default;
+		}
+	}
+
+	&--regular {
+		background-color: rgba($color-black, .6);
+
+		&:hover:not(:disabled) {
+			@extend .button--attention;
+			background-color: $color-gray-light;
+		}
+
+		&:disabled {
+			color: $color-gray;
+			background-color: $color-gray-dark;
+			cursor: default;
+		}
+	}
+}

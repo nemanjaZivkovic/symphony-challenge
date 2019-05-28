@@ -1,0 +1,19 @@
+$base-font-family: 'Work Sans', sans-serif;
+$base-font-size: 17px;
+
+$base-radius: 10px;
+
+$header-height: 70px;
+
+$spacing-unit: 20px;
+$spacing-unit--small: round($spacing-unit / 2);
+
+$page-max-width: 1170px;
+
+$base-transition-timing: .2s;
+
+// Breakpoints
+$breakpoint-small: 481px;
+$breakpoint-medium: 640px;
+$breakpoint-large: 1025px;
+$breakpoint-extra-large: 1281px;

@@ -1,0 +1,45 @@
+@import '../../../scss/variables/color.scss';
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0 30px;
+	background-color: $color-black;
+
+	color: $color-gray-light;
+
+	ul {
+		display: flex;
+		align-items: center;
+		font-size: 1.4vw;
+		@media (max-width: 1600px) {
+			font-size: 1.8vw;
+		}
+		@media (max-width: 1300px) {
+			font-size: 25px;
+		}
+		@media (max-width: 600px) {
+			font-size: 22px;
+		}
+		@media (max-width: 400px) {
+			font-size: 18px;
+		}
+		li:not(:last-child) {
+			margin-right: 10px;
+		}
+
+		img {
+			height: 30px;
+		}
+	}
+
+	@media (max-width: 500px) {
+		padding: 0 12px;
+	}
+}
+
+.activeLink {
+	color: $color-link--hover !important;
+}

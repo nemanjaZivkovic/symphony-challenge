@@ -1,0 +1,19 @@
+@import '../../../scss/variables/color.scss';
+
+.link {
+	text-decoration: none;
+	color: inherit;
+
+	&:not(.link--wrapper) {
+		text-transform: capitalize;
+		color: $color-link;
+		cursor: pointer;
+
+		transition: color .2s ease;
+
+		&:hover,
+		&:focus {
+			color: $color-link--hover;
+		}
+	}
+}

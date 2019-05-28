@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import TopNews from './containers/TopNews/TopNews';
+import Search from './containers/Search/Search';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+  const {history} = props;
+	
+	// as this is single page application we need to 'manually' scroll to top on each route change
+  history.listen(()=> window.scrollTo(0, 0));
+  
+	return (
+		<Layout>
+			<Switch>
+				<Route path="/top-news" component={TopNews} />
+				<Route path="/search" component={Search} />
+				<Redirect to="/top-news" />
+			</Switch>
+		</Layout>
+	);
 }
 
-export default App;
+export default withRouter(App);

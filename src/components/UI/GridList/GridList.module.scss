@@ -1,0 +1,13 @@
+.ListBase {
+	display: grid;
+	width: 100%;
+	grid-gap: 7px;
+	grid-row-gap: 7px;
+	grid-template-columns: repeat(auto-fill, minmax(330px, 0.75fr));
+	@media(max-width: 750px) {
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	}
+	@media(max-width: 550px) {
+		grid-template-columns: 1fr;
+	}
+}
