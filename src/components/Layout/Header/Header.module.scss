@@ -4,42 +4,55 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	position: absolute;
+	left: 0;
+	top: 0;
 	width: 100%;
+	height: 57px;
 	padding: 0 30px;
-	background-color: $color-black;
+	background: #fff;
 
-	color: $color-gray-light;
-
-	ul {
+	nav {
 		display: flex;
 		align-items: center;
-		font-size: 1.4vw;
-		@media (max-width: 1600px) {
-			font-size: 1.8vw;
-		}
-		@media (max-width: 1300px) {
-			font-size: 25px;
-		}
-		@media (max-width: 600px) {
-			font-size: 22px;
-		}
-		@media (max-width: 400px) {
-			font-size: 18px;
-		}
-		li:not(:last-child) {
-			margin-right: 10px;
+		height: 100%;
+		flex-grow: 1;
+		margin-left: 1.2rem;
+
+		span {
+			margin-left: auto;
+			margin-right: 1rem;
 		}
 
-		img {
-			height: 30px;
+		a {
+			color: $color-text;
+		}
+
+		a:not(:last-child) {
+			margin-right: 15px;
 		}
 	}
 
-	@media (max-width: 500px) {
-		padding: 0 12px;
+	button {
+		padding-right: 0;
+		// max-width: 300px;
+		min-width: 180px;
+	}
+
+	@media (max-width: 480px) {
+		padding: 0 15px;
+	}
+}
+
+.logo {
+	h1 {
+		margin: 0;
+		font-weight: 600;
+		letter-spacing: .1rem;
+		text-transform: uppercase;
 	}
 }
 
 .activeLink {
-	color: $color-link--hover !important;
+	color: $color-brand !important;
 }

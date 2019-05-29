@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import testRegex from '../utils/testRegex';
+
 export const useFormInput = (props) => {
 	const { name, rules, defaultValue, onChange } = props;
 	const [ value, setValue ] = useState(defaultValue || '');
@@ -25,7 +27,7 @@ export const useFormInput = (props) => {
 		let errorMessage = '';
 
 		if (rules) {
-			const { required, minLength, maxLength } = rules;
+			const { required, minLength, maxLength, email } = rules;
 
 			if (required && value === '') {
 				errorMessage = 'This field is required';
@@ -33,6 +35,8 @@ export const useFormInput = (props) => {
 				errorMessage = `Enter at least ${rules.minLength} characters`;
 			} else if (maxLength && value.length > maxLength) {
 				errorMessage = `${rules.maxLength} characters is the maximum`;
+			} else if (email && !testRegex.isEmail(value)) {
+				errorMessage = 'Please enter a valid email';
 			}
 		}
 		// continue adding any custom validation rules here

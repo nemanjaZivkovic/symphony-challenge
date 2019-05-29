@@ -1,18 +1,52 @@
-$color-brand: #e50914;
+// Color palette
+$color-brand: #fc7f3f;;
 $color-brand-highlight: lighten($color-brand, 20%);
 $color-brand-shadow: darken($color-brand, 10%);
 
-$color-black: #080808;
-$color-white: #e6e6e6;
+$color-white: #fff;
+
 $color-gray: #666666;
 $color-gray-light: #cacaca;
 $color-gray-dark: #333333;
 
-$color-error: #eb4d4d;
-$color-text: $color-black;
-$color-link: $color-text;
-$color-link--hover: $color-brand;
+$color-error: #ec4e4e;
+$color-success: #35af35;
 
-$color-headings: $color-white;
+$color-highlight: rgba(255, 255, 255, 0.05);
+$color-shadow: rgba(0, 0, 0, 0.05);
 
-$color-background: #282424;
+// Page
+$color-background: $color-gray-light;
+
+// UI
+$color-ui: $color-gray-light;
+
+// Text
+$color-text: $color-gray-dark;
+$color-headings: $color-gray-dark;
+
+// Links
+$color-link: $color-brand;
+$color-link--hover: $color-brand-shadow;
+
+// Buttons
+$color-btn: $color-brand;
+$color-btn--hover: $color-brand-shadow;
+$color-btn--focus: $color-brand-shadow;
+$color-btn--active: $color-brand-shadow;
+$color-btn-bgr: $color-gray;
+$color-btn-bgr--hover: $color-brand-shadow;
+$color-btn-bgr--focus: $color-brand-shadow;
+$color-btn-bgr--active: $color-brand-shadow;
+
+// Inputs
+$color-input: $color-brand;
+$color-input-bgr: $color-brand-shadow;
+$color-input-border: $color-gray;
+$color-input-placeholder: $color-brand-shadow;
+
+// exporting variables to be used in JS components
+:export {
+    color-brand: $color-brand;
+    color-gray-light: $color-gray-light;
+}

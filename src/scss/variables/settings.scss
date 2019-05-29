@@ -11,6 +11,8 @@ $spacing-unit--small: round($spacing-unit / 2);
 $page-max-width: 1170px;
 
 $base-transition-timing: .2s;
+$base-transition: $base-transition-timing ease;
+
 
 // Breakpoints
 $breakpoint-small: 481px;

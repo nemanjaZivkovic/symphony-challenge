@@ -7,10 +7,10 @@ const Layout = (props) => {
 		<div className="app">
 			<Header/>
 			<section>
-				<aside>aside</aside>
+				{/* <aside>aside</aside> */}
 				<main>{props.children}</main>
 			</section>
-			<footer>footer</footer>
+			{/* <footer>footer</footer> */}
 		</div>
 	);
 };

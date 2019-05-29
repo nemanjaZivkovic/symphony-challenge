@@ -1,0 +1,260 @@
+@import '../../../scss/variables/color.scss';
+@import '../../../scss/variables/settings.scss';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: $spacing-unit--small;
+	width: 100%;
+
+	// reset evergreen styles
+
+	input,
+	textarea {
+		font-family: $base-font-family;
+		color: $color-text;
+
+		&::placeholder {
+			color: $color-gray-light;
+		}
+		text-overflow: ellipsis;
+		font-size:21px;
+
+		padding: 0;
+		border-radius: 0;
+		border-bottom: 1px solid $color-input-border;
+		box-shadow: none;
+		max-width: 100%;
+
+		&:focus {
+			box-shadow: none;
+			border-bottom: 1px solid $color-input-border;
+		}
+	}
+
+	&:focus-within {
+		input,
+		textarea,
+		button {
+			border-bottom: 1px solid $color-brand;
+		}
+
+		// checkbox label
+		label div {
+			border: 1px solid $color-brand;
+		}
+
+		.label {
+			color: $color-brand;
+		}	
+	}
+
+	// wrapper on error selector
+	&[aria-invalid="true"] {
+		input,
+		textarea {
+			border-bottom: 1px solid $color-error;
+		}
+
+		// checkbox label
+		label div {
+			border: 1px solid $color-error;
+		}
+
+		.label {
+			color: $color-error;
+		}
+	}
+
+	// wrapper on focus selector
+	input,
+	textarea,
+	label div {
+		&:focus {
+			border-bottom: 1px solid $color-brand-highlight;
+		}
+	}
+}
+
+.iconWrapper{
+	position: relative;
+}
+
+.input {
+	width: 100% !important;
+
+	&--text {
+		//border: 1px solid lightcoral;
+
+		&[aria-invalid="true"] {
+			border: 1px solid $color-error;
+		}
+	}
+
+	&--combo {
+		display: none;
+		position: relative;
+
+		&[aria-invalid="true"] {
+			border: 1px solid $color-error;
+		}
+
+		button {
+			position: absolute;
+			background: none !important;
+			box-shadow: none !important;
+			top: 0;
+			right: 0;
+			z-index: 9;
+		}
+	}
+
+	&--textarea {
+		//border: 1px solid cornflowerblue;
+	}
+
+	&--radio-group {
+		//border: 1px solid palevioletred;
+	}
+
+	&--phone {
+	}
+
+	&--checkbox {
+		margin-bottom: 2px;
+
+		&[aria-invalid="true"] {
+			div {
+				border: 1px solid $color-error;
+			}
+		}
+
+		input:checked + div {
+			background-image: linear-gradient(to bottom, $color-brand, $color-brand) !important;
+		}
+
+		input:focus + div {
+			box-shadow: none !important;
+			border: 1px solid $color-brand;
+		}
+
+		> span {
+			font-family: $base-font-family;
+			font-size:19px;
+		}
+	}
+
+	&--icon {
+		padding-right: 30px !important;
+	}
+}
+
+// global portal overrides
+[evergreen-portal-container] {
+	[role="dialog"] {
+		border-radius: 0;
+
+		[id^=downshift] {
+			border: 1px solid $color-gray-light;
+			//position: relative !important;
+			//height: auto !important;
+			& > div {
+				border: none;
+			}
+
+			span {
+				font-size: inherit;
+				color: $color-text;
+			}
+		}
+		[aria-current="true"] {
+			background: $color-white;
+			svg {
+				fill: $color-brand !important;
+			}
+		}
+		[aria-selected="true"] {
+			border: 1px solid $color-brand;
+			background: $color-brand;
+			span {
+				color: $color-white;
+			}
+			svg {
+				fill: $color-white !important;
+			}
+		}
+	}
+}
+
+.selectMenu {
+	[role=menu] {
+		//border: 1px solid $color-gray;
+		[role=menuitem] {
+			box-shadow: none !important;
+			border: 1px solid $color-gray-light;
+			&:not(:last-child) {
+				border-bottom: none;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				box-shadow: none !important;
+				background: $color-brand;
+				color: $color-white;
+			}
+		}
+	}
+}
+
+.selectTrigger {
+	width: 100%;
+	background: none !important;
+	border-radius: 0;
+	border-bottom: 1px solid $color-gray;
+	box-shadow: none !important;
+	padding: 0;
+	font-size: inherit;
+	color: inherit;
+	background-image: none !important;
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: none !important;
+		background: none !important;
+		border-bottom: 1px solid $color-gray;
+	}
+
+	&--placeholder {
+		color: $color-gray-light;
+	}
+}
+
+.inputIcon {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 5;
+
+	img {
+		vertical-align: initial;
+	}
+}
+
+.label {
+	margin-bottom: 6px;
+	text-transform: capitalize;
+	color: $color-gray;
+	text-align: left;
+	font-size:19px;
+}
+
+.error {
+	text-align: left;
+	font-size:12px;
+	color: $color-error;
+}

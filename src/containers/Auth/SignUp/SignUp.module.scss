@@ -1,0 +1,35 @@
+
+.container {
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+
+    h1{
+        margin-bottom: 5px;
+    }
+
+    p{
+        margin-bottom: 30px;
+    }
+}
+
+.paper {
+    max-width: 444px;
+    margin-bottom:47px;
+
+    form {
+        margin: 0 auto;
+        max-width: 286px;
+    }
+}
+
+.iconWrapper {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+
+}

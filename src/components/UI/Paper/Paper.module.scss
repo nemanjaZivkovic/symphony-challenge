@@ -1,0 +1,17 @@
+@import '../../../scss/variables/settings.scss';
+@import '../../../scss/variables/color.scss';
+
+.paper {
+	width: 100%;
+	max-width: 630px;
+	text-align: center;
+	background: $color-white;
+	padding: 30px 50px;
+	border-radius: $base-radius * 1.5;
+	margin-bottom: 60px;
+	margin: 70px auto 60px;
+
+	@media (max-width: 768px) {
+		padding: 20px;
+	}
+}

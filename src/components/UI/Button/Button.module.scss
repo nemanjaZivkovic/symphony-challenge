@@ -1,45 +1,29 @@
 @import '../../../scss/variables/color.scss';
+@import '../../../scss/variables/settings.scss';
 
-.button {
-	display: flex;
-	justify-content: center;
-	min-width: 80px;
-	padding: 5px 8px;
 
-	font-size: 22px;
-	text-transform: capitalize;
-	color: $color-white;
-	border: none;
-	transition: all .2s ease;
+button.button{
+    justify-content: center;
+    height: auto;
+    width: 286px;
+    max-width: 100%;
+    padding: 10px;
+    color: $color-white;
+    line-height: inherit !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 21px;
+    
+    transition: background-color $base-transition-timing;
+    background: $color-brand;
+    border-radius: $base-radius;
 
-	cursor: pointer;
+    &:hover{
+        background: $color-brand-shadow !important;
+    }
 
-	&:focus {
-		outline: 0;
-	}
+    &--underline{
+        border: 1px solid blue;
+    }
 
-	&--attention {
-		background-color: $color-white;
-		color: $color-black;
-		&:disabled {
-			color: $color-gray-light;
-			background-color: $color-gray-dark;
-			cursor: default;
-		}
-	}
-
-	&--regular {
-		background-color: rgba($color-black, .6);
-
-		&:hover:not(:disabled) {
-			@extend .button--attention;
-			background-color: $color-gray-light;
-		}
-
-		&:disabled {
-			color: $color-gray;
-			background-color: $color-gray-dark;
-			cursor: default;
-		}
-	}
 }

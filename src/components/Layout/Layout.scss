@@ -7,34 +7,31 @@
 
 	header {
 		position: fixed;
+		z-index: 10;
 		top: 0;
 		width: 100%;
-		background: teal;
 		width: 100%;
 		height: $header-height;
 		flex-shrink: 0;
 	}
 
-	section {
+	> section {
 		display: flex;
 		flex-wrap: wrap;
 		flex-grow: 666;
 		width: 100%;
 		margin-top: $header-height;
 		aside {
-			background: burlywood;
 			flex-basis: 20rem;
 			flex-grow: 1;
 		}
 		main {
-			background: olive;
 			min-width: 50%;
 			flex-grow: 666;
 		}
 	}
 
 	footer {
-		background: skyblue;
 		width: 100%;
 		height: 70px;
 		flex-shrink: 0;

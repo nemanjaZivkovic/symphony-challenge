@@ -1,14 +1,14 @@
-@import '../../../scss/settings/settings.colors';
+@import '../../../scss/variables/color.scss';
 
 .accordion {
 	overflow: hidden;
-	transition: max-height .25s ease;
-	max-height: 400px;
+	transition: all .3s ease;
+	max-height: 600px;
 	width: 100%;
-	border-bottom: 2px solid $color-gray;
+	border-top: 2px solid rgba($color-gray-light, 1);
 
 	&--collapsed {
 		max-height: 0px;
-		border-bottom: 2px solid $color-gray-light;
+		border-top: 2px solid rgba($color-gray-light, 0);
 	}
 }
